@@ -43,3 +43,6 @@ mutations, minimum/maximum length filters, and sorted deduplicated output.
 
 [Packaged] - Debian/Kali package metadata is included upstream and builds the
 `personal-pass-generator` binary package.
+
+After Kali creates the issue, configure
+[status notifications](kali-status-notifications.md).
