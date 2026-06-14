@@ -1,0 +1,120 @@
+# Personal Pass Generator (PPG)
+
+Generate focused, personalized password candidate lists for authorized
+penetration tests, password-policy reviews, and security training.
+
+PPG turns a small set of relevant seed values into deduplicated candidates
+using case variants, optional leet substitutions, combinations, and bounded
+prefix/suffix mutations. It supports both an interactive interview and a
+repeatable command-line workflow.
+
+> Use PPG only against systems and accounts you own or have explicit written
+> permission to assess. Generated lists may contain sensitive personal data.
+
+## Features
+
+- Interactive collection of names, dates, nicknames, family, pets, company,
+  profession, and memorable words
+- Scriptable generation with repeatable `--word` arguments
+- Lowercase, capitalized, uppercase, and optional leet variants
+- Optional bounded prefix/suffix mutations
+- Minimum and maximum length filters
+- Sorted and deduplicated output
+- No runtime dependencies outside Python
+
+## Installation
+
+PPG requires Python 3.9 or newer.
+
+```bash
+git clone https://github.com/anpa1200/personal-pass-generator.git
+cd personal-pass-generator
+python -m pip install .
+```
+
+The installation exposes the `ppg` command. You can also run the source file
+directly:
+
+```bash
+python PPG_personal_pass_generator.py --help
+```
+
+## Quick Start
+
+Start the guided interactive workflow:
+
+```bash
+ppg
+```
+
+Generate a focused list from command-line seed values:
+
+```bash
+ppg \
+  --word alice \
+  --word acme \
+  --word 1992 \
+  --leet \
+  --min-length 8 \
+  --max-length 14 \
+  --output alice.wordlist.txt
+```
+
+Add one-character prefix and suffix mutations:
+
+```bash
+ppg --word alice --word acme --symbols --max-affix-length 1 \
+  --min-length 8 --max-length 14 --output assessment.wordlist.txt
+```
+
+## CLI Reference
+
+| Option | Purpose |
+| --- | --- |
+| `-w`, `--word VALUE` | Add a seed value; repeat for multiple values |
+| `-o`, `--output PATH` | Set output path; default is `special_list.txt` |
+| `--leet` | Add leet-speak variants in non-interactive mode |
+| `--symbols` | Add prefix and suffix mutations |
+| `--max-affix-length {1,2,3}` | Bound mutation depth; default is `1` |
+| `--min-length N` | Minimum candidate length; default is `4` |
+| `--max-length N` | Maximum candidate length; default is `12` |
+
+When no `--word` values are supplied, PPG starts the interactive workflow.
+
+## Resource Safety
+
+Mutation depth has an exponential effect on output size. Start with
+`--max-affix-length 1`, two to five high-confidence seed values, and a narrow
+length range. Depths `2` and `3` can consume substantial CPU, memory, and disk.
+
+Before an assessment:
+
+1. Confirm written authorization and scope.
+2. Minimize collected personal data.
+3. Generate the smallest useful list.
+4. Apply account lockout and rate-limit controls.
+5. Securely delete generated artifacts when the engagement ends.
+
+## Development
+
+```bash
+python -m pip install -e ".[dev]"
+make check
+```
+
+`make check` runs Ruff and pytest. GitHub Actions runs the same checks across
+supported Python versions.
+
+## Guides and Ecosystem
+
+- [Personal Pass Generator: complete guide](https://medium.com/@1200km/personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c)
+- [Authorized RDP testing with Crowbar and PPG](https://medium.com/@1200km/accessing-remote-desktops-a-beginner-s-guide-to-rdp-cracking-with-crowbar-and-ppg-tools-5f50027115b7)
+- [1200km PT Tools and Techniques](https://1200km.com/pt-tools.html)
+- [1200km security research ecosystem](https://1200km.com/)
+- [Original Passwords Toolkit](https://github.com/anpa1200/Passwords)
+
+## License
+
+Copyright (C) Andrey Pautov.
+
+Licensed under the [GNU General Public License v3.0 or later](LICENSE).

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+special_list.txt
+*.wordlist.txt
+*.wordlist
+*.txt
+!.github/*.txt
