@@ -1,0 +1,26 @@
+Source: personal-pass-generator
+Section: utils
+Priority: optional
+Maintainer: Andrey Pautov <1200km@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-pytest,
+ python3-setuptools
+Standards-Version: 4.7.0
+Homepage: https://github.com/anpa1200/personal-pass-generator
+Vcs-Browser: https://github.com/anpa1200/personal-pass-generator
+Vcs-Git: https://github.com/anpa1200/personal-pass-generator.git
+Rules-Requires-Root: no
+
+Package: personal-pass-generator
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends}
+Description: focused personalized password wordlist generator
+ Personal Pass Generator creates focused candidate wordlists for authorized
+ password-security assessments. It supports interactive and scriptable
+ workflows, case and leet variants, bounded mutations, and length filters.

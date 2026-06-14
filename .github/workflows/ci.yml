@@ -24,3 +24,12 @@ jobs:
       - run: python -m pip install -e ".[dev]"
       - run: ruff check .
       - run: pytest
+
+  debian-package:
+    runs-on: ubuntu-latest
+    container: debian:testing-slim
+    steps:
+      - uses: actions/checkout@v4
+      - run: apt-get update && apt-get install -y build-essential debhelper dh-python pybuild-plugin-pyproject python3-all python3-pytest python3-setuptools lintian
+      - run: dpkg-buildpackage -us -uc -b
+      - run: lintian ../personal-pass-generator_*_all.deb

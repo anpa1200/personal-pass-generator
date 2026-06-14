@@ -1,0 +1,13 @@
+Package: personal-pass-generator
+Version: 1.0.0-0kali1
+Architecture: all
+Maintainer: Andrey Pautov <1200km@gmail.com>
+Installed-Size: 40
+Depends: python3:any
+Section: utils
+Priority: optional
+Homepage: https://github.com/anpa1200/personal-pass-generator
+Description: focused personalized password wordlist generator
+ Personal Pass Generator creates focused candidate wordlists for authorized
+ password-security assessments. It supports interactive and scriptable
+ workflows, case and leet variants, bounded mutations, and length filters.

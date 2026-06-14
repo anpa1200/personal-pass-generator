@@ -13,8 +13,6 @@ import string
 import sys
 from pathlib import Path
 
-__version__ = "1.1.0"
-
 # Predefined list of special symbols
 BASIC_SPECIAL_SYMBOLS = [
     "!",
@@ -328,7 +326,6 @@ def main() -> None:
         description="Personal Pass Generator (PPG) - personalized wordlists for security testing.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     parser.add_argument(
         "-o",
         "--output",

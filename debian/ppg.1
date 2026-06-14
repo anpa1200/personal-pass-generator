@@ -1,0 +1,35 @@
+.TH PPG 1 "June 2026" "personal-pass-generator 1.1.0" "User Commands"
+.SH NAME
+ppg \- generate focused personalized password candidate lists
+.SH SYNOPSIS
+.B ppg
+.RI [ options ]
+.SH DESCRIPTION
+Personal Pass Generator creates focused password candidate wordlists for
+authorized password-security assessments. Without seed words it starts an
+interactive workflow.
+.SH OPTIONS
+.TP
+.BR \-w ", " \-\-word " " VALUE
+Add a seed value. Repeat this option to provide multiple values.
+.TP
+.BR \-o ", " \-\-output " " PATH
+Write candidates to PATH.
+.TP
+.B \-\-leet
+Add leet-speak variants.
+.TP
+.B \-\-symbols
+Add bounded prefix and suffix mutations.
+.TP
+.BR \-\-min-length " " N
+Set the minimum candidate length.
+.TP
+.BR \-\-max-length " " N
+Set the maximum candidate length.
+.SH EXAMPLE
+.B ppg --word alice --word acme --leet --min-length 8 --max-length 14 -o candidates.txt
+.SH AUTHOR
+Andrey Pautov <1200km@gmail.com>
+.SH LICENSE
+GPL-3.0-or-later

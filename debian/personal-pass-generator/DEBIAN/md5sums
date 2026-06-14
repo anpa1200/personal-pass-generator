@@ -1,0 +1,9 @@
+62882a62adf963c4beb08937e08eea4a  usr/bin/ppg
+4267d957a69141f0eea20e7551858628  usr/lib/python3/dist-packages/PPG_personal_pass_generator.py
+c72246579c4437c07cebb86fbcbc6d90  usr/lib/python3/dist-packages/personal_pass_generator-1.0.0.dist-info/INSTALLER
+d56248dd5f6a391f2cdadfd5d05e8422  usr/lib/python3/dist-packages/personal_pass_generator-1.0.0.dist-info/METADATA
+209a788345affd9efdd632d70e6d7a5e  usr/lib/python3/dist-packages/personal_pass_generator-1.0.0.dist-info/entry_points.txt
+36fc8de33c8bb6bb2cff08b02e9ac8ab  usr/lib/python3/dist-packages/personal_pass_generator-1.0.0.dist-info/top_level.txt
+779ec0bbb4a9f2bf79611c93651f4493  usr/share/doc/personal-pass-generator/changelog.Debian.gz
+ec345167c212ce3d2df1b6a4e38a49e6  usr/share/doc/personal-pass-generator/copyright
+44094310710eeebee522db0b7fb85f0c  usr/share/man/man1/ppg.1.gz
